@@ -12,18 +12,21 @@
         <h1>User form:</h1>
     </div>
     <div class="row">
-        <form th:object="${userForm}" th:action="@{/user}" method="post">
+        <form th:object="${userObject}" th:action="@{/user}" method="post">
             <div class="form-group col-md-5">
                 <label class="col-form-label" for="name">Name</label>
                 <input type="text" th:field="*{name}" placeholder="Name" class="form-control" id="name">
+                <span th:if="${#fields.hasErrors('name')}" class="text-danger" th:errors="*{name}"></span>
             </div>
             <div class="form-group col-md-5">
                 <label class="col-form-label" for="email">Email</label>
                 <input type="email" th:field="*{email}" placeholder="Email" class="form-control" id="email">
+                <span th:if="${#fields.hasErrors('email')}" class="text-danger" th:errors="*{email}"></span>
             </div>
             <div class="form-group col-md-5">
                 <label class="col-form-label" for="age">Age</label>
                 <input type="number" th:field="*{age}" placeholder="Varsta" class="form-control" id="age">
+                <span th:if="${#fields.hasErrors('age')}" class="text-danger" th:errors="*{age}"></span>
             </div>
             <div class="row">
                 <input type="submit" class="btn btn-primary" value="Submit">
