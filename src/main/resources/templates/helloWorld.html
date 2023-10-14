@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>HelloWorld</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script scr="/webjars/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1>HelloWorld</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+            <p>Primul meu view</p>
+        </div>
+        <div class="col-8">
+            <p th:text="${attributeName}"></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
