@@ -9,8 +9,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import ro.sda.java57.firstwebproject.model.User;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class HelloWorldController {
+
+    private static List<User> users = new ArrayList<User>();
     @GetMapping("/hello")
     public String helloWorld(Model modelMap){
         modelMap.addAttribute("attributeName", "Hello2 message from ThymeLeaf!");
@@ -34,9 +39,9 @@ public class HelloWorldController {
             return "userForm";
         }
         //Todo just to keep the same data
-        model.addAttribute("userForm", userObject);
-        System.out.println(userObject);
-        return "userForm";
+        users.add(userObject);
+        model.addAttribute("userList", users);
+        return "userList";
     }
 
 }
