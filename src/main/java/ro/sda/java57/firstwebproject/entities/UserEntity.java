@@ -8,6 +8,7 @@ import lombok.Data;
 @Entity
 @Data
 public class UserEntity {
+
     @Id
     @GeneratedValue
     private Long id;
